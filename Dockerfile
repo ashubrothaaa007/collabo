@@ -2,7 +2,7 @@
 FROM node:18-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
 RUN npm run build
 
@@ -10,8 +10,8 @@ RUN npm run build
 FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
-RUN npm install --only=production
+RUN npm ci --omit=dev
 COPY --from=build /app/dist ./dist
 COPY server.js ./
 EXPOSE 8080
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
