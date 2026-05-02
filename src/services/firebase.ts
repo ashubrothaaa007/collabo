@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: import.meta.env.REACT_APP_FIREBASE_API_KEY || 'dummy_api_key',
@@ -9,10 +10,12 @@ const firebaseConfig = {
   projectId: import.meta.env.REACT_APP_FIREBASE_PROJECT_ID || 'dummy_project_id',
   storageBucket: import.meta.env.REACT_APP_FIREBASE_STORAGE_BUCKET || 'dummy_storage_bucket',
   messagingSenderId: import.meta.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || 'dummy_messaging_sender_id',
-  appId: import.meta.env.REACT_APP_FIREBASE_APP_ID || 'dummy_app_id'
+  appId: import.meta.env.REACT_APP_FIREBASE_APP_ID || 'dummy_app_id',
+  measurementId: import.meta.env.REACT_APP_FIREBASE_MEASUREMENT_ID || 'dummy_measurement_id'
 };
 
 const app = initializeApp(firebaseConfig);
+export const analytics = getAnalytics(app);
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
