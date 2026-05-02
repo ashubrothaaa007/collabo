@@ -4,7 +4,7 @@ import { useTasks } from '../../hooks/useTasks';
 import { updateTask } from '../../services/tasks';
 import Column from './Column';
 import Chat from '../Chat/Chat';
-import { Status, Task } from '../../types';
+import { Status } from '../../types';
 import { MessageSquare } from 'lucide-react';
 import clsx from 'clsx';
 

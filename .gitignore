@@ -29,3 +29,4 @@ yarn-error.log*
 # Temp downloads
 gh.zip
 gh_cli/
+gcloud-installer.exe

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Loader2, Plus, ArrowRight } from 'lucide-react';
+import { Sparkles, Loader2, Plus } from 'lucide-react';
 import { suggestTasks } from '../../services/gemini';
 import { addTask } from '../../services/tasks';
 import { useAuth } from '../../hooks/useAuth';
